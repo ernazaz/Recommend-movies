@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<title>Recommends Movies</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">.
+<link rel="stylesheet" href="app.css">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+<link rel="icon" type="image/png" href="http://example.com/myicon.png">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<body>
+    <div id="main">
+        <div class="title">
+                <img id="imdb" src="assets/images/imdb.png">
+                <h1>Recommends</h1>
+                <img id="imdb" src="assets/images/Asset 1.png">
+                <h1> MOVIES</h1>
+        </div>
+        <hr>
+        <div  class="wrapper">
+            <div  id="touch" class="item a mobile">
+                <div class="headers">
+                    <div id="firstColImg" class="initImg">
+                    </div>
+                    <div class="info">
+                        <div class="nameCard">
+                            <h2 class="name"></h2>
+                        </div>
+                        <p id="genres"></p>
+                        <button>more</button>
+                    </div>
+                </div>
+                <div class="decription">
+                    <div class="rates">
+                        <img id="star" src="assets/images/star.png">
+                        <p id="rating"></p>
+                    </div>
+                    <div>
+                        <p id="decription"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="item b">
+                <div class="headers">
+                    <div id="secondImg" class="initImg">
+                    </div>
+                    <div class="info">
+                        <div class="nameCard">
+                            <h2 class="name"></h2>
+                        </div>
+                        <p id="genres"></p>
+                        <button>more</button>
+                    </div>
+                </div>
+                <div class="decription">
+                    <div class="rates">
+                        <img id="star" src="assets/images/star.png">
+                        <p id="rating"></p>
+                    </div>
+                    <div>
+                        <p id="decription"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- onmouseout="initial()" -->
+        <div onmouseover="clearInt()"   onmouseout="initial()" class="slidecontainer">
+            <button style="float:left" id="left" class="arrow" onclick="plusDivs(-1)"><img src="assets/images/left.png"></button>
+            <input id="slider" type="range" min="0" max="4" value="0" class="slider" id="myRange">
+            <button style="float: right;" id="ridht" class="arrow" onclick="plusDivs(+1)"><img src="assets/images/right.png"></button>
+        </div>
+        <div id="dots" style="text-align:center">
+                <span class="dot active" onclick="showDivs(0)"></span> 
+                <span class="dot" onclick="showDivs(1)"></span> 
+                <span class="dot" onclick="showDivs(2)"></span> 
+                <span class="dot" onclick="showDivs(3)"></span> 
+                <span class="dot" onclick="showDivs(4)"></span> 
+                <span class="dot" onclick="showDivs(5)"></span> 
+                <span class="dot" onclick="showDivs(6)"></span> 
+                <span class="dot" onclick="showDivs(7)"></span> 
+                <span class="dot" onclick="showDivs(8)"></span> 
+                <span class="dot" onclick="showDivs(9)"></span> 
+              </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

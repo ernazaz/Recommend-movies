@@ -1,0 +1,351 @@
+  * {
+    box-sizing: border-box;
+      margin: 0px;
+      font-family: 'Ubuntu', sans-serif;
+}
+#main {
+    width: 1000px;
+    margin: auto;
+    height: 450px;
+    margin-top: 150px;
+    background: #333131;
+    color: aliceblue;
+}
+.title {
+    display: flex;
+    height: 100px;
+    padding-top: 18px;
+    padding-left: 155px;
+}
+.title h1 {
+        font-size: 40px;
+        margin-top: 8px;
+        letter-spacing: 2px;
+        margin-right: 25px;
+    }
+.title img {
+    height: 65px;
+    margin-right: 25px;
+}
+.wrapper, .headers, .decription {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto auto;
+    width: 100%;
+    padding: 10px;
+  }
+.wrapper {
+    grid-template-columns: 50% 50%;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    padding-right: 35px;
+}
+.headers {
+    height: 120px;
+    grid-template-columns: 40% 60%;
+}
+.name {
+    font-size: 22px;
+}
+.item {
+    height: 240px;
+}
+
+.nameCard {
+    height: 55px;
+}
+.info button {
+    background: #7F7F7F;
+    border: none;
+    height: 25px;
+    width: 94px;
+    color: #D3D3D3;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.info p {
+    color: #AEC7D5;
+}
+.initImg {
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.decription {
+    grid-template-columns: 20% 80%;
+    margin-top: 5px;
+    height: 110px;
+.b {
+    border-left: 1px solid #505050;
+}
+#img {
+    width: 140px;
+}
+.info {
+    padding-left: 7px;
+    padding-right: 25px;
+}
+.slider {
+    -webkit-appearance: none;
+    width: 913px;
+    height: 23px;
+    background: none;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .4s;
+    transition: opacity .4s;
+  }
+  #decription {
+    font-size: 15px;
+    color: #AEC7D5;
+}
+button:focus {outline:0;}
+
+.active {
+    background-color: #717171 !important;
+  }
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  #dots {
+    display: none;
+  }
+
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 180px;
+    height: 23px;
+    background: #8A8484;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 23px;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  .slidecontainer {
+    border-radius: 15px;
+    width: 995px;
+    height: 23px;
+      background: #BEBEBA;
+      margin: auto;
+      margin-top: 25px;
+
+  }
+  .arrow {
+    height: 100%;
+    width: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .arrow img {
+    height: 12px;
+    width: 15px;
+  }
+  .rates {
+    display: -webkit-inline-box;
+    padding-top: 10px;
+      border-right: 1px solid #505050;
+  }
+  hr {
+   border-bottom: 1px solid #505050;
+  }
+  .rates p {
+    font-size: 27px;
+    margin-top: 8px;
+  }
+  .rates img {
+    height: 35px;
+    margin-right: 7px;
+  }
+  @media screen and (max-width: 1040px) {
+   #main {
+       width: 800px;
+   }
+   .title {
+    padding-left: 69px;
+    }
+    #imdb {
+    height: 60px;
+    margin-right: 20px;
+    }
+    .decription {
+    grid-template-columns: 25% 75%;
+    }
+    .slidecontainer {
+        width: 790px;
+    }
+    .slider {
+        width: 710px;
+    }
+    .slider::-webkit-slider-thumb {
+        width: 140px;
+    }
+    .nameCard h2 {
+        font-size: 20px;
+    }
+    #genres {
+        font-size: 15px;
+    }
+}
+@media (max-width: 840px) {
+    .wrapper {
+        grid-template-columns: 100%;
+    }
+    #main {
+        width: 600px;
+        height: 675px;
+    }
+    .title {
+        padding-left: 50px;
+        height: 90px;
+        padding-top: 20px;
+    }
+    .title h1 {
+        font-size: 30px;
+        margin-right: 20px;
+    }
+    #imdb {
+        height: 45px;
+        margin-right: 20px;
+    }
+    .b {
+        border:none;
+    }
+
+    .slidecontainer {
+        width: 590px;
+    }
+    .slider {
+        width: 510px;
+    }
+    .slider::-webkit-slider-thumb {
+        width: 120px;
+    }
+
+
+ }
+ @media (max-width: 650px) {
+    #main {
+        width: 500px;
+    }
+    #imdb {
+        height: 35px;
+        margin-right: 15px;
+    }
+    .title {
+        padding-top: 25px;
+    }
+    .title h1 {
+        font-size: 21px;
+        margin-right: 15px;
+    }
+    .slidecontainer {
+        width: 490px;
+    }
+    .slider {
+        width: 410px;
+    }
+    .slider::-webkit-slider-thumb {
+        width: 110px;
+    }
+ }
+ @media (max-width: 550px) {
+    #main {
+        width: 400px;
+    }
+    .title h1 {
+        font-size: 18px;
+        margin-right: 13px;
+        margin-top: 5px;
+    }
+    #imdb {
+        height: 29px;
+        margin-right: 13px;
+    }
+    .title {
+        padding-left: 40px;
+        height: 80px;
+    }
+    .slidecontainer {
+        width: 390px;
+    }
+    .slider {
+        width: 310px;
+    }
+    .slider::-webkit-slider-thumb {
+        width: 90px;
+    }
+    .nameCard h2 {
+        font-size: 20px;
+    }
+
+ }
+ @media  (max-width: 430px) {
+    #main {
+        width: 320px;
+        height: 400px;
+    }
+    .title {
+        padding-left: 15px;
+    }
+    #imdb {
+        height: 29px;
+        margin-right: 9px;
+    }
+    .title h1 {
+        font-size: 15px;
+        margin-right: 9px;
+        margin-top: 7px;
+    }
+    #decription {
+        font-size: 13px;
+    }
+    .rates img {
+        height: 28px;
+        margin-right: 6px;
+    }
+    .rates p {
+        font-size: 20px;
+        margin-top: 8px;
+    }
+    .nameCard h2 {
+        font-size: 16px;
+    }
+    .b {
+        display: none;
+    }
+    .slidecontainer {
+        display: none;
+    }
+    #dots {
+        display: block;
+      }
+ }

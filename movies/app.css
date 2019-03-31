@@ -48,7 +48,8 @@
     font-size: 22px;
 }
 .item {
-    height: 240px;
+    max-height: 240px;
+    min-height: 120px;
 }
 
 .nameCard {
@@ -88,6 +89,22 @@
     padding-left: 7px;
     padding-right: 25px;
 }
+.info, .description {
+    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 0.7s; /* Safari 4.0 - 8.0 */
+    animation-name: example;
+    animation-duration: 0.7s;
+}
+@-webkit-keyframes example {
+    from {opacity: 0.1;}
+    to {opacity: 1;}
+  }
+  
+  /* Standard syntax */
+  @keyframes example {
+    from {opacity: 0.1;}
+    to {opacity: 1;}
+  }
 .slider {
     -webkit-appearance: none;
     width: 913px;
@@ -154,11 +171,12 @@ button:focus {outline:0;}
   }
   .slidecontainer {
     border-radius: 15px;
-    width: 995px;
     height: 23px;
-      background: #BEBEBA;
-      margin: auto;
-      margin-top: 25px;
+    background: #BEBEBA;
+    margin: auto;
+    top: 36.8rem;
+    position: absolute;
+    margin-left: 3px;
 
   }
   .arrow {
@@ -335,6 +353,7 @@ button:focus {outline:0;}
     }
     .slidecontainer {
         width: 490px;
+        top: 51.8rem;
     }
     .slider {
         width: 410px;
@@ -363,6 +382,7 @@ button:focus {outline:0;}
     }
     .slidecontainer {
         width: 390px;
+        top: 42rem;
     }
     .slider {
         width: 310px;

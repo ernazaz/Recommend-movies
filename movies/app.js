@@ -23,6 +23,8 @@ let movies = [bugs, front, forrest, godfather, matrix, pianist, pulp, schindler,
 let first = 0;
 let second = 1;
 let slideIndex = 0;
+let loading;
+let interval = 10000;
 
 let slide = document.getElementById('slider');
 const width = window.matchMedia("(min-width: 430px)")
@@ -48,7 +50,6 @@ function plusDivs(n) {
 
 
 function showMovies(n) {
-
     first = n;
     second = n + 1;
     if (second >= movies.length) {
@@ -58,30 +59,28 @@ function showMovies(n) {
     let newList = [movies[first], movies[second]]
     wrapper.innerHTML = "";
 
-    for (let i = 0; i <= 1; i++) {
+    for (let i = 0; i < newList.length; i++) {
         var card = document.createElement("div");
         card.className = "item";
         card.setAttribute("id", "touch")
-        var div = ` <div class="headers"><div class="movieImg"></div><div class="info"><div class="nameCard">
-        <h2 class="name">${newList[i].name}</h2></div><p id="genres"></p><button>more</button></div></div>
-        <div class="description"><div class="rates"><img id="star" src="assets/images/star.png"><p id="rating">${newList[i].rate}</p></div>
-        <div><p id="description">${newList[i].description}</p></div></div>`
+        var div = ` <div class="headers">
+        <div class="movieImg"></div> </div>`
 
         card.innerHTML = div;
         wrapper.appendChild(card);
     }
     let dots = document.querySelector("#dots");
     dots.innerHTML = "";
-    
+
     for (let i = 0; i < movies.length; i++) {
         let span = document.createElement('span');
         span.className = 'dot';
-        span.addEventListener('click',getIndex);
+        span.addEventListener('click', getIndex);
         dots.appendChild(span);
     }
     dot[first].className += " active"
     for (let i = 0; i < newList.length; i++) {
-        moviesList[i].querySelector('#genres').innerHTML = newList[i].genres.toString();
+        // moviesList[i].querySelector('#genres').innerHTML = newList[i].genres.toString();
         moviesList[i].querySelector('.movieImg').style.backgroundImage = " url(" + newList[i].image + ")";
     }
     if (width.matches) {
@@ -90,7 +89,27 @@ function showMovies(n) {
     } else {
         moviesList[1].style.display = "none"
     }
+    loading = setTimeout(function () { lazyLoad(slideIndex, newList) }, 1000);
+}
 
+function clearTimeout() {
+    clearTimeout(loading);
+}
+
+function lazyLoad(slideIndex, newList) {
+    for (let i = 0; i < newList.length; i++) {
+        let headers = document.getElementsByClassName('headers');
+        let item = document.getElementsByClassName('item');
+        let info = document.createElement('div');
+        info.classList = 'info';
+        info.innerHTML = ` <div class="nameCard"><h2 class="name">${newList[i].name}</h2></div><p id="genres"></p><button>more</button>`;
+        let description = document.createElement('div');
+        description.classList = 'description';
+        description.innerHTML = `<div class="rates"><img id="star" src="assets/images/star.png"><p id="rating">${newList[i].rate}</p></div><div><p id="description">${newList[i].description}</p></div>  `;
+        headers[i].appendChild(info);
+        item[i].appendChild(description)
+        moviesList[i].querySelector('#genres').innerHTML = newList[i].genres.toString();
+    }
 }
 showMovies(slideIndex);
 
@@ -115,7 +134,6 @@ window.onload = function () {
     })
 }
 
-
 function resize(width) {
     if (width.matches) {
         moviesList[1].style.display = "block";
@@ -129,19 +147,19 @@ resize(width) // Call listener function at run time
 width.addListener(resize) // Attach listener function on state changes
 
 function getIndex() {
-slideIndex = Array.prototype.indexOf.call(dot, this);
-showMovies(slideIndex);
+    slideIndex = Array.prototype.indexOf.call(dot, this);
+    showMovies(slideIndex);
 }
-let interval = 10000;
+
 function init() {
-    initialInterval =  setInterval(function(n){
-     if (width.matches) {
-       plusDivs(n);
-     }
-   }, interval, 1);
- }
- 
- init();
- function clearInt() {
-   clearInterval(initialInterval);
- }
+    initialInterval = setInterval(function (n) {
+        if (width.matches) {
+            plusDivs(n);
+        }
+    }, interval, 1);
+}
+
+init();
+function clearInt() {
+    clearInterval(initialInterval);
+}
